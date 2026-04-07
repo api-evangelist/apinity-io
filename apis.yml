@@ -3,7 +3,7 @@ url: >-
   https://raw.githubusercontent.com/api-evangelist/apinity-io/refs/heads/main/apis.yml
 apis:
   - aid: apinity-io:apinity-io
-    name: apinity.io
+    name: Apinity.io
     tags:
       - API
     humanURL: https://apinity.io/
@@ -13,7 +13,7 @@ apis:
     description: >-
       apinity empowers organisations to run their compliant API marketplace that
       simplifies integration, drives adoption and secures governance ...
-name: apinity.io
+name: Apinity.io
 tags:
   - Discovery
   - Governance
