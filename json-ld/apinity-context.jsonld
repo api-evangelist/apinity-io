@@ -1,0 +1,22 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "apinity": "https://apinity.io/vocab/",
+    "id": "@id",
+    "type": "@type",
+    "name": "schema:name",
+    "description": "schema:description",
+    "provider": "schema:provider",
+    "version": "schema:version",
+    "status": "apinity:status",
+    "compliancePolicies": "apinity:compliancePolicies",
+    "categories": "schema:category",
+    "createdAt": {
+      "@id": "dcterms:created",
+      "@type": "xsd:dateTime"
+    }
+  }
+}

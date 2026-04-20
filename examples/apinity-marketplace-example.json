@@ -1,0 +1,11 @@
+{
+  "id": "api_payment_v2",
+  "name": "Payment Processing API",
+  "description": "Compliant REST API for processing payments across multiple payment providers with PCI-DSS compliance.",
+  "provider": "acme-fintech",
+  "version": "2.0.0",
+  "status": "published",
+  "compliancePolicies": ["PCI-DSS", "GDPR", "ISO27001"],
+  "categories": ["Finance", "Payments", "Compliance"],
+  "createdAt": "2026-01-10T09:00:00Z"
+}

@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/apinity-io/main/json-structure/apinity-marketplace-structure.json",
+  "title": "Apinity Marketplace API",
+  "description": "Structure representing an API registered in the Apinity compliant API marketplace",
+  "type": "object",
+  "properties": {
+    "id": { "type": "string", "description": "Unique identifier" },
+    "name": { "type": "string", "description": "Name of the API" },
+    "description": { "type": "string", "description": "Description of the API" },
+    "provider": { "type": "string", "description": "Organization providing the API" },
+    "version": { "type": "string", "description": "API version" },
+    "status": { "type": "string", "description": "Lifecycle status" },
+    "compliancePolicies": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Compliance policies applied"
+    },
+    "categories": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Marketplace categories"
+    },
+    "createdAt": { "type": "datetime", "description": "Registration timestamp" }
+  }
+}

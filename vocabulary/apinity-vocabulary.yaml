@@ -1,0 +1,73 @@
+vocabulary:
+  name: Apinity Vocabulary
+  description: Unified taxonomy mapping API marketplace resources, governance policies, and personas across the Apinity compliant API marketplace platform
+  version: 1.0.0
+  updated: '2026-04-19'
+
+resources:
+  - name: MarketplaceAPI
+    description: An API registered and published in the Apinity compliant API marketplace
+    properties:
+      - id
+      - name
+      - description
+      - provider
+      - version
+      - status
+      - compliancePolicies
+      - categories
+      - createdAt
+
+  - name: Subscription
+    description: A consumer's active subscription to an API in the marketplace
+    properties:
+      - id
+      - apiId
+      - consumerId
+      - plan
+      - status
+      - subscribedAt
+
+  - name: CompliancePolicy
+    description: A regulatory or governance policy applied to marketplace APIs
+    values:
+      - PCI-DSS
+      - GDPR
+      - ISO27001
+      - SOC2
+      - HIPAA
+
+  - name: Provider
+    description: An organization that registers and publishes APIs in the marketplace
+    properties:
+      - id
+      - name
+      - description
+      - contact
+
+  - name: Consumer
+    description: An organization or developer subscribing to marketplace APIs
+    properties:
+      - id
+      - name
+      - apiKeys
+
+actions:
+  - name: Register
+    description: Register an API in the Apinity marketplace for discovery and subscription
+  - name: Publish
+    description: Publish a registered API to make it available to marketplace consumers
+  - name: Subscribe
+    description: Subscribe to an API to gain access credentials and usage rights
+  - name: Govern
+    description: Apply compliance policies and governance rules to marketplace APIs
+  - name: Monitor
+    description: Track API usage, adoption metrics, and compliance adherence
+
+personas:
+  - name: API Provider
+    description: An organization publishing APIs to the marketplace for partner consumption
+  - name: API Consumer
+    description: A developer or organization subscribing to marketplace APIs for integration
+  - name: Marketplace Administrator
+    description: An administrator governing the compliant API marketplace platform

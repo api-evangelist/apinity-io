@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/apinity-io/main/json-schema/apinity-marketplace-schema.json",
+  "title": "Apinity Marketplace API",
+  "description": "Schema representing an API registered in the Apinity compliant API marketplace",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Unique identifier for the marketplace API"
+    },
+    "name": {
+      "type": "string",
+      "description": "Name of the API"
+    },
+    "description": {
+      "type": "string",
+      "description": "Description of the API and its capabilities"
+    },
+    "provider": {
+      "type": "string",
+      "description": "Organization providing the API"
+    },
+    "version": {
+      "type": "string",
+      "description": "API version"
+    },
+    "status": {
+      "type": "string",
+      "enum": ["draft", "published", "deprecated", "retired"],
+      "description": "Lifecycle status of the API in the marketplace"
+    },
+    "compliancePolicies": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Compliance policies applied to this API"
+    },
+    "categories": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Categories classifying this API in the marketplace"
+    },
+    "createdAt": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Timestamp when the API was registered in the marketplace"
+    }
+  },
+  "required": ["id", "name", "provider", "status"]
+}
