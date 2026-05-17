@@ -39,7 +39,7 @@ apis:
         url: https://apinity.io/
       - type: JSONSchema
         url: json-schema/apinity-marketplace-schema.json
-      - type: JSON-LD
+      - type: JSONLD
         url: json-ld/apinity-context.jsonld
 common:
   - type: Website
