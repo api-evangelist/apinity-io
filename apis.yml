@@ -42,6 +42,10 @@ apis:
       - type: JSONLD
         url: json-ld/apinity-context.jsonld
 common:
+  - type: GitHubOrganization
+    url: https://github.com/apinity-io
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/apinity
   - type: Website
     url: https://apinity.io/
   - type: Features
