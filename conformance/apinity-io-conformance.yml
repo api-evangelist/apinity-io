@@ -1,0 +1,58 @@
+generated: '2026-09-18'
+method: searched
+source: https://auth.apinity.io/realms/syncier-marketplace-engine/.well-known/openid-configuration
+docs:
+  - https://docs.apinity.io/concepts/authorization
+  - https://docs.apinity.io/step-by-step/provide-a-service-on-the-marketplace/add-an-api
+provider: Apinity.io
+providerId: apinity-io
+note: >-
+  No contract of apinity's own exists to read a domain-standard signature from; the platform INGESTS
+  OpenAPI from third-party providers rather than publishing one. Standards below are asserted only
+  where a served document or the provider's docs state them. No compliance certifications (SOC 2, ISO
+  27001, etc.) are published anywhere reachable, so no Compliance pointer is emitted.
+conformance:
+  - id: oauth2
+    conforms: true
+    evidence: >-
+      Consumer Client OAuth2 login uses grant_type=client_credentials and grant_type=refresh_token as
+      application/x-www-form-urlencoded POSTs and returns access_token / refresh_token / expires_in /
+      refresh_token_expires_in (https://docs.apinity.io/step-by-step/subscribe-and-consume-a-service/consume-an-api-technical-implementation).
+      Non-standard details: the token endpoint is the per-subscription {EndpointURI}/login on the gateway
+      rather than the issuer's token endpoint, and the token is sent in x-apx-authorization, not Authorization.
+  - id: oidc
+    conforms: true
+    evidence: >-
+      The realm issuing the gateway's JWTs serves a full OpenID Connect discovery document
+      (issuer https://auth.apinity.io/realms/syncier-marketplace-engine; saved verbatim to
+      well-known/apinity-io-openid-configuration.json) listing authorization_code, client_credentials,
+      device_code, token-exchange and CIBA grants, PKCE S256, private_key_jwt and tls_client_auth.
+      The document describes the Keycloak realm; only client_credentials is documented for API consumers.
+  - id: openapi-ingest
+    conforms: true
+    evidence: >-
+      Provider-facing docs state uploaded API definitions may be OpenAPI 2.0, 3.0 or 3.1 (JSON only, YAML
+      not supported) and that only the first servers[] entry is honoured
+      (https://docs.apinity.io/step-by-step/provide-a-service-on-the-marketplace/add-an-api).
+      This is the platform consuming the standard, not publishing a contract in it.
+  - id: rfc9457
+    conforms: false
+    evidence: no problem+json or any error envelope is documented for gateway 401/403/404 responses
+  - id: rfc8594
+    conforms: false
+    evidence: no Deprecation/Sunset headers or deprecation policy are documented
+  - id: idempotency
+    conforms: false
+    evidence: no Idempotency-Key mechanism is documented (conventions/apinity-io-conventions.yml)
+  - id: bipro
+    conforms: null
+    evidence: >-
+      Domain standard of the market apinity serves (German insurance data exchange). apinity is the base
+      platform of the BiPRO Hub and sold "BiPRO as a Service" via FINCON on its marketplace, but no
+      BiPRO-normed contract is published by apinity itself — the norm implementations belong to the
+      service providers listed on the hub. Recorded as unverified rather than claimed.
+domain_standard:
+  market: insurance data exchange (DACH)
+  candidate: BiPRO
+  declared_in_contract: false
+  note: no first-party contract exists to carry a BiPRO signature; reward-only field left unclaimed

@@ -1,0 +1,83 @@
+generated: '2026-09-18'
+method: searched
+source: https://docs.apinity.io/release-notes/about-the-release-notes
+provider: Apinity.io
+providerId: apinity-io
+scheme: monthly release notes (one page per month; no semantic version numbers are published)
+current_version: null
+last_entry: '2024-07'
+note: >-
+  The release-notes section of docs.apinity.io stops at July 2024 ("preparing something awesome for
+  August.. stay tuned!"). No entry has been added in the 26 months since; apinity.io itself now 301s to
+  bipro-service.gmbh. Read that as a decay signal, not as a statement that the platform stopped changing.
+entries:
+  - version: '2024-07'
+    date: '2024-07'
+    breaking: false
+    highlights:
+      - Improved the Access Control assignment logic and UI
+      - Improved the Access Control dialogue within the API setup screen
+    url: https://docs.apinity.io/release-notes/2024-july
+  - version: '2024-06'
+    date: '2024-06'
+    breaking: false
+    highlights:
+      - Fixed Manage plans button in Services overview
+      - Fixed Date/Time validation in the API status announcement dialogue
+      - Fixed validation of service names beginning with numbers
+    url: https://docs.apinity.io/release-notes/2024-june
+  - version: '2024-05'
+    date: '2024-05'
+    breaking: false
+    highlights:
+      - "Milestone: API status — providers set Operational / Degraded / Major Outage / Maintenance on published APIs; subscribers are notified automatically and see a status history per API"
+      - Center-stage portal layout; new Data Insights section in My Hub
+      - Improved plan cancellation workflow
+    url: https://docs.apinity.io/release-notes/2024-may
+  - version: '2024-04'
+    date: '2024-04'
+    breaking: false
+    highlights:
+      - Providers can define additional questions consumers must answer during the subscription workflow
+      - Users can delete owned workspaces with no active subscribers/subscriptions
+      - Dynamic catalog collections based on service parameters (Categories, Countries)
+      - Upstream server URL hidden from the consumer-facing catalog
+    url: https://docs.apinity.io/release-notes/2024-april
+  - version: '2024-03'
+    date: '2024-03'
+    breaking: false
+    highlights:
+      - Improved subscriber- and provider-side views of the subscription approval loop
+      - Reworked page header for responsiveness
+    url: https://docs.apinity.io/release-notes/2024-march
+  - version: '2024-02'
+    date: '2024-02'
+    breaking: false
+    highlights:
+      - API specification of APIs attached to subscribed plans can be updated in place (minor version updates without a new plan)
+      - Better handling of invalid baseURLs during API upload
+    url: https://docs.apinity.io/release-notes/2024-february
+  - version: '2024-01'
+    date: '2024-01'
+    breaking: false
+    highlights:
+      - "Milestone: Catalog Collections with unique URLs"
+      - Customizable catalog banner
+      - Providers can contact subscribers from the Subscribers dashboard
+    url: https://docs.apinity.io/release-notes/2024-january
+  - version: '2023-11'
+    date: '2023-11'
+    breaking: false
+    highlights:
+      - Tenant administrators can invite new users to any workspace
+      - Uploading contracts to plans made optional (not on marketplace.apinity.io)
+      - "\"API Collection\" menu renamed to \"APIs\""
+    url: https://docs.apinity.io/release-notes/2023-november
+  - version: '2023-10'
+    date: '2023-10'
+    breaking: false
+    highlights:
+      - "Milestone: reworked authorization header — the gateway token moves to x-apx-authorization so providers can receive tokens directly in Authorization; existing subscriptions keep working with the original header"
+      - Step-by-step consumption guide with dynamically generated cURL examples under Technical Setup
+      - Multiple currencies for plan pricing; APIs can be deleted when not attached to a live plan
+    url: https://docs.apinity.io/release-notes/2023-october

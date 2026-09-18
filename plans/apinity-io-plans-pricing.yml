@@ -4,148 +4,46 @@ schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main
 provider: Apinity.io
 providerId: apinity-io
 created: '2026-05-04'
-# Provenance stamped 2026-08-11: this artifact was written by the API Evangelist
-# bulk sweep dated 2026-05-04, not harvested from the provider. See roadmap#35.
-method: generated
-modified: '2026-05-04'
+modified: '2026-09-18'
+generated: '2026-09-18'
+method: searched
+source: https://docs.apinity.io/readme
+evidence:
+  - url: https://apinity.io/
+    status: 301
+    note: the page the docs send readers to "for more information about features and pricing" now redirects to https://bipro-service.gmbh/, which carries no apinity pricing
+  - url: https://apinity.io/product/
+    status: 301
+  - url: https://docs.apinity.io/step-by-step/provide-a-service-on-the-marketplace/add-a-plan
+    status: 200
+    note: describes how a SERVICE PROVIDER prices its own plans on a tenant (per period, per request with threshold, per transaction); not apinity's own platform pricing
 tags:
   - API Governance
   - API Marketplace
   - Compliance
   - Discovery
   - Integration Platform
-description: Machine-readable plans and pricing scaffold for this API provider. Conforms to the API Commons
-  Plans schema. Tier limits and prices are scaffold defaults; replace with provider-published values.
-plans:
-  - id: apinity-io-free
-    name: Free
-    type: freemium
-    description: Free entry tier for the Apinity.io API surface. Intended for evaluation, prototyping,
-      and low-volume integrations. Real limits and pricing must be reconciled with the provider's published
-      plan documentation.
-    entries:
-      - label: API Requests
-        description: Monthly API request quota across all included endpoints
-        name: api_requests
-        type: quota
-        metric: requests
-        limit: 1000
-        timeFrame: month
-        geo: global
-        domains:
-          - https://api.apinity.io
-        unit: 1
-        price: '0.00'
-        userMultiplied: false
-      - label: Rate Limit
-        description: Maximum requests per minute on the free tier
-        name: rate_limit
-        type: rate
-        metric: requests_per_minute
-        limit: 10
-        timeFrame: minute
-        geo: global
-        domains:
-          - https://api.apinity.io
-        unit: 1
-        price: '0.00'
-        userMultiplied: false
-    elements:
-      - name: Public Documentation
-      - name: Community Support
-      - name: Sandbox Access
-      - name: Apinity.io API
-  - id: apinity-io-pro
-    name: Professional
-    type: paid
-    description: Production tier for Apinity.io. Provides higher quotas, priority support, and access
-      to the broader API portfolio. Pricing placeholder; align with the provider's pricing page.
-    entries:
-      - label: API Requests
-        description: Monthly API request quota
-        name: api_requests
-        type: quota
-        metric: requests
-        limit: 100000
-        timeFrame: month
-        geo: global
-        domains:
-          - https://api.apinity.io
-        unit: 1
-        price: TBD
-        userMultiplied: false
-      - label: Rate Limit
-        description: Maximum requests per minute on the professional tier
-        name: rate_limit
-        type: rate
-        metric: requests_per_minute
-        limit: 100
-        timeFrame: minute
-        geo: global
-        domains:
-          - https://api.apinity.io
-        unit: 1
-        price: '0.00'
-        userMultiplied: false
-      - label: Overage
-        description: Per-request price after monthly quota is exceeded
-        name: overage
-        type: metered
-        metric: requests
-        limit: -1
-        timeFrame: month
-        geo: global
-        domains:
-          - https://api.apinity.io
-        unit: 1000
-        price: TBD
-        userMultiplied: false
-    elements:
-      - name: All Production Endpoints
-      - name: Email Support
-      - name: SLA Targets
-      - name: Webhook Subscriptions
-      - name: Apinity.io API
-  - id: apinity-io-enterprise
-    name: Enterprise
-    type: enterprise
-    description: Custom-negotiated tier for Apinity.io. Includes dedicated capacity, contractual SLAs,
-      security review, data residency options, and named technical account management.
-    entries:
-      - label: API Requests
-        description: Negotiated request volume; -1 indicates uncapped subject to fair use
-        name: api_requests
-        type: quota
-        metric: requests
-        limit: -1
-        timeFrame: month
-        geo: configurable
-        domains:
-          - https://api.apinity.io
-        unit: 1
-        price: custom
-        userMultiplied: false
-      - label: Rate Limit
-        description: Negotiated burst and steady-state rate
-        name: rate_limit
-        type: rate
-        metric: requests_per_minute
-        limit: 1000
-        timeFrame: minute
-        geo: configurable
-        domains:
-          - https://api.apinity.io
-        unit: 1
-        price: custom
-        userMultiplied: false
-    elements:
-      - name: Unlimited / Negotiated Volume
-      - name: 24/7 Dedicated Support
-      - name: Contractual SLA
-      - name: Security & Compliance Review
-      - name: Dedicated Account Manager
-      - name: Custom Data Residency
-      - name: Apinity.io API
+description: >-
+  apinity publishes no plans or prices for its own platform. The whitelabel SaaS is sold by demo and
+  sales contact (sales@apinity.io); the pricing page the documentation points at (apinity.io) now redirects
+  to BIPRO Service GmbH. The plan model the docs DO describe is the one each third-party service provider
+  configures for its services on an apinity tenant. The three-tier scaffold this file carried until
+  2026-09-18 (Free 1,000 req/month, Professional, Enterprise) was an API Evangelist sweep default with no
+  provider source and has been removed.
+plan_count: 0
+plans: []
+plan_model_for_hosted_services:
+  note: how plans on an apinity marketplace are shaped, per the provider docs — attributes of the platform, not prices of apinity
+  service_types: [API, Application]
+  demo_plans: free plans highlighted in the catalog; a rate limit is mandatory on a demo plan
+  visibility: [Selected Workspaces, All Workspaces]
+  pricing_dimensions:
+    API: [price per period, price per unit (request) with optional tiered threshold, price per transaction with optional threshold]
+    Application: [price per period, price per user with threshold, price per setup]
+  limits: amount of requests per period, defined per plan
+  transactions: Single Request (endpoint + HTTP response codes) or Response Header (endpoint set + header name/value)
+  currencies: multiple, chosen by the tenant administrator (since 2023-10)
+  subscription_approval: optional per plan; providers may require additional questions before approval (since 2024-04)
 maintainers:
   - FN: Kin Lane
     email: info@apievangelist.com

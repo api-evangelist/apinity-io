@@ -1,0 +1,131 @@
+generated: '2026-09-18'
+method: probed
+source: live GET of each /.well-known/ path on every host the record knows (apinity.io, www.apinity.io, api.apinity.io, docs.apinity.io, auth.apinity.io, api.marketplace.apinity.io) plus the 301 target bipro-service.gmbh
+note: >-
+  ONE real hit. auth.apinity.io is the Keycloak identity server behind the marketplace gateway
+  (the docs' example JWTs carry iss https://auth.apinity.io/realms/syncier-marketplace-engine) and it
+  serves a full OpenID Connect discovery document at the realm path
+  /realms/syncier-marketplace-engine/.well-known/openid-configuration (saved verbatim as
+  apinity-io-openid-configuration.json). The host root /.well-known/* answers 404 JSON. apinity.io and
+  www.apinity.io 301 every path to bipro-service.gmbh, whose /.well-known/* all return the site's HTML
+  shell with a 404 status; docs.apinity.io (GitBook) serves /llms.txt (saved under llms/) and an HTML
+  404 for everything else; api.apinity.io 404s every path; api.marketplace.apinity.io (the gateway host
+  the docs name) presents a certificate for *.apinity.io that does not cover the two-level subdomain,
+  so no document can be fetched from it over a verified TLS connection. security.txt: absent on every host.
+hosts:
+  - host: apinity.io
+    note: every path 301s to https://bipro-service.gmbh/<path>; the redirect target is a different registrable domain
+    documents:
+      - {path: /.well-known/security.txt, status: 301, file: null, redirect: https://bipro-service.gmbh/.well-known/security.txt}
+      - {path: /.well-known/openid-configuration, status: 301, file: null}
+      - {path: /.well-known/oauth-authorization-server, status: 301, file: null}
+      - {path: /.well-known/oauth-protected-resource, status: 301, file: null}
+      - {path: /.well-known/api-catalog, status: 301, file: null}
+      - {path: /.well-known/ai-plugin.json, status: 301, file: null}
+      - {path: /.well-known/ucp.json, status: 301, file: null}
+      - {path: /.well-known/acp.json, status: 301, file: null}
+      - {path: /.well-known/aauth-resource.json, status: 301, file: null}
+      - {path: /.well-known/apis.json, status: 301, file: null}
+      - {path: /apis.json, status: 301, file: null}
+      - {path: /apis.yml, status: 301, file: null}
+      - {path: /.well-known/agent-card.json, status: 301, file: null}
+      - {path: /.well-known/agent.json, status: 301, file: null}
+  - host: www.apinity.io
+    note: identical to apinity.io — every path 301s to bipro-service.gmbh
+    documents:
+      - {path: /.well-known/security.txt, status: 301, file: null}
+      - {path: /.well-known/openid-configuration, status: 301, file: null}
+      - {path: /.well-known/oauth-authorization-server, status: 301, file: null}
+      - {path: /.well-known/oauth-protected-resource, status: 301, file: null}
+      - {path: /.well-known/api-catalog, status: 301, file: null}
+      - {path: /.well-known/ai-plugin.json, status: 301, file: null}
+      - {path: /.well-known/ucp.json, status: 301, file: null}
+      - {path: /.well-known/acp.json, status: 301, file: null}
+      - {path: /.well-known/aauth-resource.json, status: 301, file: null}
+      - {path: /.well-known/apis.json, status: 301, file: null}
+      - {path: /apis.json, status: 301, file: null}
+      - {path: /apis.yml, status: 301, file: null}
+      - {path: /.well-known/agent-card.json, status: 301, file: null}
+      - {path: /.well-known/agent.json, status: 301, file: null}
+  - host: bipro-service.gmbh
+    note: the 301 target of apinity.io — a different company (BIPRO Service GmbH); probed only to close the redirect chain. Every path returns the site's HTML shell with status 404.
+    documents:
+      - {path: /.well-known/security.txt, status: 404, file: null}
+      - {path: /.well-known/openid-configuration, status: 404, file: null}
+      - {path: /.well-known/oauth-authorization-server, status: 404, file: null}
+      - {path: /.well-known/api-catalog, status: 404, file: null}
+      - {path: /.well-known/ai-plugin.json, status: 404, file: null}
+      - {path: /.well-known/apis.json, status: 404, file: null}
+      - {path: /apis.json, status: 404, file: null}
+      - {path: /.well-known/agent-card.json, status: 404, file: null}
+      - {path: /.well-known/agent.json, status: 404, file: null}
+      - {path: /llms.txt, status: 404, file: null}
+  - host: api.apinity.io
+    note: host resolves and terminates TLS but answers 404 with an empty body for / and every probed path
+    documents:
+      - {path: /.well-known/security.txt, status: 404, file: null}
+      - {path: /.well-known/openid-configuration, status: 404, file: null}
+      - {path: /.well-known/oauth-authorization-server, status: 404, file: null}
+      - {path: /.well-known/oauth-protected-resource, status: 404, file: null}
+      - {path: /.well-known/api-catalog, status: 404, file: null}
+      - {path: /.well-known/ai-plugin.json, status: 404, file: null}
+      - {path: /.well-known/ucp.json, status: 404, file: null}
+      - {path: /.well-known/acp.json, status: 404, file: null}
+      - {path: /.well-known/aauth-resource.json, status: 404, file: null}
+      - {path: /.well-known/apis.json, status: 404, file: null}
+      - {path: /apis.json, status: 404, file: null}
+      - {path: /apis.yml, status: 404, file: null}
+      - {path: /.well-known/agent-card.json, status: 404, file: null}
+      - {path: /.well-known/agent.json, status: 404, file: null}
+  - host: api.marketplace.apinity.io
+    note: >-
+      the gateway host the docs name for every API call (https://api.marketplace.apinity.io/{EndpointURI}/login).
+      TLS handshake fails verification — the served certificate is CN=apinity.io with SAN *.apinity.io,
+      which does not cover a two-level subdomain. With verification disabled the origin (nginx) answers 404 to /.
+      No document was probed over a verified connection; recorded as unreachable rather than absent.
+    documents:
+      - {path: /.well-known/security.txt, status: 0, file: null, error: SSL certificate does not match host}
+      - {path: /.well-known/openid-configuration, status: 0, file: null, error: SSL certificate does not match host}
+      - {path: /.well-known/oauth-authorization-server, status: 0, file: null, error: SSL certificate does not match host}
+      - {path: /.well-known/oauth-protected-resource, status: 0, file: null, error: SSL certificate does not match host}
+      - {path: /.well-known/api-catalog, status: 0, file: null, error: SSL certificate does not match host}
+      - {path: /.well-known/agent-card.json, status: 0, file: null, error: SSL certificate does not match host}
+  - host: docs.apinity.io
+    note: GitBook-hosted user manual; /llms.txt is served as text/markdown and saved to llms/apinity-io-llms.txt. All other paths return the GitBook HTML 404 page.
+    documents:
+      - {path: /llms.txt, status: 200, file: ../llms/apinity-io-llms.txt, content_type: text/markdown}
+      - {path: /.well-known/security.txt, status: 404, file: null}
+      - {path: /.well-known/openid-configuration, status: 404, file: null}
+      - {path: /.well-known/oauth-authorization-server, status: 404, file: null}
+      - {path: /.well-known/oauth-protected-resource, status: 404, file: null}
+      - {path: /.well-known/api-catalog, status: 404, file: null}
+      - {path: /.well-known/ai-plugin.json, status: 404, file: null}
+      - {path: /.well-known/ucp.json, status: 404, file: null}
+      - {path: /.well-known/acp.json, status: 404, file: null}
+      - {path: /.well-known/aauth-resource.json, status: 404, file: null}
+      - {path: /.well-known/apis.json, status: 404, file: null}
+      - {path: /apis.json, status: 404, file: null}
+      - {path: /apis.yml, status: 404, file: null}
+      - {path: /.well-known/agent-card.json, status: 404, file: null}
+      - {path: /.well-known/agent.json, status: 404, file: null}
+  - host: auth.apinity.io
+    note: >-
+      Keycloak. The host root redirects browsers to a Microsoft Entra login (oauth2-proxy in front of the
+      admin console); the realm path serves the OIDC discovery document anonymously. Every host-root
+      /.well-known/* path answers 404 {"error":"Unable to find matching target resource method"}.
+    documents:
+      - {path: /realms/syncier-marketplace-engine/.well-known/openid-configuration, status: 200, file: apinity-io-openid-configuration.json, content_type: application/json, issuer: https://auth.apinity.io/realms/syncier-marketplace-engine}
+      - {path: /.well-known/openid-configuration, status: 404, file: null}
+      - {path: /.well-known/oauth-authorization-server, status: 404, file: null}
+      - {path: /.well-known/oauth-protected-resource, status: 404, file: null}
+      - {path: /.well-known/security.txt, status: 404, file: null}
+      - {path: /.well-known/api-catalog, status: 404, file: null}
+      - {path: /.well-known/ai-plugin.json, status: 404, file: null}
+      - {path: /.well-known/ucp.json, status: 404, file: null}
+      - {path: /.well-known/acp.json, status: 404, file: null}
+      - {path: /.well-known/aauth-resource.json, status: 404, file: null}
+      - {path: /.well-known/apis.json, status: 404, file: null}
+      - {path: /apis.json, status: 404, file: null}
+      - {path: /apis.yml, status: 404, file: null}
+      - {path: /.well-known/agent-card.json, status: 404, file: null}
+      - {path: /.well-known/agent.json, status: 404, file: null}

@@ -1,0 +1,48 @@
+# User Manual
+
+## User Manual
+
+- [WELCOME](https://docs.apinity.io/readme.md): Welcome to the apinity end-user documentation
+- [Publish a service](https://docs.apinity.io/quick-start/publish-your-first-service-quick.md): Quick overview
+- [Consume a service](https://docs.apinity.io/quick-start/consume-a-service-quick.md): Quick overview
+- [Manage your User Account](https://docs.apinity.io/step-by-step/manage-your-user-account.md)
+- [Signup / Login](https://docs.apinity.io/step-by-step/manage-your-user-account/signup-login.md)
+- [Edit your Profile](https://docs.apinity.io/step-by-step/manage-your-user-account/edit-your-profile.md)
+- [Change your Password](https://docs.apinity.io/step-by-step/manage-your-user-account/change-your-password.md)
+- [Reset your Password](https://docs.apinity.io/step-by-step/manage-your-user-account/reset-your-password.md)
+- [Manage your Workspace](https://docs.apinity.io/step-by-step/manage-your-workspace-overview.md)
+- [Create a Workspace](https://docs.apinity.io/step-by-step/manage-your-workspace-overview/create-a-workspace.md)
+- [Edit Workspace Details](https://docs.apinity.io/step-by-step/manage-your-workspace-overview/edit-workspace-details.md)
+- [Manage Users](https://docs.apinity.io/step-by-step/manage-your-workspace-overview/manage-users.md)
+- [Provide a Service](https://docs.apinity.io/step-by-step/provide-a-service-on-the-marketplace.md)
+- [APIs](https://docs.apinity.io/step-by-step/provide-a-service-on-the-marketplace/add-an-api.md): An API is the technical representation of a product. APIs can belong to one or more Services.
+- [Add a Service](https://docs.apinity.io/step-by-step/provide-a-service-on-the-marketplace/add-a-service.md): A service is the marketing representation of a product and its features.
+- [Service Configuration](https://docs.apinity.io/step-by-step/provide-a-service-on-the-marketplace/add-a-service-2.md): A service is the marketing representation of a product and its features.
+- [Add a Plan](https://docs.apinity.io/step-by-step/provide-a-service-on-the-marketplace/add-a-plan.md): A plan is the commercial representation of a service. In a plan, you associate APIs to the service, and define the pricing and limits of consumption.
+- [Adding Plans](https://docs.apinity.io/step-by-step/provide-a-service-on-the-marketplace/add-a-plan-1.md): A plan is the commercial representation of a service. In a plan, you associate APIs to the service, and define the pricing and limits of consumption.
+- [Preview & Publish](https://docs.apinity.io/step-by-step/provide-a-service-on-the-marketplace/preview-and-publish-your-services-and-plans.md)
+- [Preview](https://docs.apinity.io/step-by-step/provide-a-service-on-the-marketplace/preview-and-publish-your-services-and-plans/preview.md)
+- [Submit](https://docs.apinity.io/step-by-step/provide-a-service-on-the-marketplace/preview-and-publish-your-services-and-plans/submission.md)
+- [Cancellation & Rejection](https://docs.apinity.io/step-by-step/provide-a-service-on-the-marketplace/preview-and-publish-your-services-and-plans/cancellation-and-rejection.md)
+- [Edit existing Services or Plans](https://docs.apinity.io/step-by-step/provide-a-service-on-the-marketplace/edit-existing-services-or-plans.md)
+- [Subscription approval](https://docs.apinity.io/step-by-step/provide-a-service-on-the-marketplace/subscription-approval.md)
+- [Subscribe and Consume a Service](https://docs.apinity.io/step-by-step/subscribe-and-consume-a-service.md)
+- [Subscribing to a Service](https://docs.apinity.io/step-by-step/subscribe-and-consume-a-service/subscribing-to-a-service.md)
+- [Consumer Clients](https://docs.apinity.io/step-by-step/subscribe-and-consume-a-service/consumer-clients.md)
+- [Consuming an API (technical Implementation)](https://docs.apinity.io/step-by-step/subscribe-and-consume-a-service/consume-an-api-technical-implementation.md)
+- [Visibility in the Catalog](https://docs.apinity.io/concepts/visibility-in-the-catalog-2.md)
+- [Services without APIs](https://docs.apinity.io/concepts/services-without-apis.md)
+- [Authorization](https://docs.apinity.io/concepts/authorization.md)
+- [Get help](https://docs.apinity.io/resources/get-help.md)
+- [apinity.io](https://docs.apinity.io/resources/apinity.io.md)
+- [apinity-xplore.io](https://docs.apinity.io/resources/apinity-xplore.io.md)
+- [About the release notes](https://docs.apinity.io/release-notes/about-the-release-notes.md)
+- [2024 July](https://docs.apinity.io/release-notes/2024-july.md)
+- [2024 June](https://docs.apinity.io/release-notes/2024-june.md)
+- [2024 May](https://docs.apinity.io/release-notes/2024-may.md)
+- [2024 April](https://docs.apinity.io/release-notes/2024-april.md)
+- [2024 March](https://docs.apinity.io/release-notes/2024-march.md)
+- [2024 February](https://docs.apinity.io/release-notes/2024-february.md)
+- [2024 January](https://docs.apinity.io/release-notes/2024-january.md)
+- [2023 November](https://docs.apinity.io/release-notes/2023-november.md)
+- [2023 October](https://docs.apinity.io/release-notes/2023-october.md)

@@ -4,89 +4,44 @@ schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main
 provider: Apinity.io
 providerId: apinity-io
 created: '2026-05-04'
-# Provenance stamped 2026-08-11: this artifact was written by the API Evangelist
-# bulk sweep dated 2026-05-04, not harvested from the provider. See roadmap#35.
-method: generated
-modified: '2026-05-04'
+modified: '2026-09-18'
+generated: '2026-09-18'
+method: searched
+source: https://docs.apinity.io/step-by-step/provide-a-service-on-the-marketplace/add-a-plan
+evidence:
+  - url: https://docs.apinity.io/step-by-step/provide-a-service-on-the-marketplace/add-a-plan
+    status: 200
+  - url: https://docs.apinity.io/step-by-step/subscribe-and-consume-a-service/consume-an-api-technical-implementation
+    status: 200
 tags:
   - API Governance
   - API Marketplace
-  - Compliance
-  - Discovery
-  - Integration Platform
   - Rate Limiting
   - Quotas
-  - Throttling
-description: Machine-readable rate limit definitions for the Apinity.io API surface. Captures per-tier
-  quotas, burst behavior, response signaling, and recovery semantics. Defaults are scaffold values to
-  be replaced with published provider limits.
+description: >-
+  apinity publishes no rate limits of its own. Limits on an apinity marketplace are per-plan quotas
+  ("100 Requests per month") that each service provider configures under Limits and Pricing, with a
+  limit mandatory on Demo plans; the amounts are whatever each provider sets and are visible only to
+  subscribers. No rate-limit response headers, exhaustion status code or backoff guidance are documented
+  for the gateway. The scaffold values this file carried until 2026-09-18 (10/100/1,000 req/min per
+  tier, X-RateLimit-* headers) were API Evangelist sweep defaults with no provider source and have been removed.
+limit_count: 0
+limits: []
 headers:
-  limit: X-RateLimit-Limit
-  remaining: X-RateLimit-Remaining
-  reset: X-RateLimit-Reset
-  retryAfter: Retry-After
-  policy: RateLimit-Policy
+  limit: null
+  remaining: null
+  reset: null
+  retryAfter: null
+  note: none documented; the only documented response headers are X-Kong-Upstream-Latency and X-Kong-Proxy-Latency (milliseconds), for performance testing
 responseCodes:
-  throttled: 429
-  quotaExceeded: 429
-  serviceUnavailable: 503
-limits:
-  - tier: free
-    name: Free Tier Default
-    scope: api-key
-    metric: requests_per_minute
-    limit: 10
-    burst: 20
-    timeFrame: minute
-    applies:
-      - Apinity.io API
-  - tier: free
-    name: Free Tier Monthly Quota
-    scope: api-key
-    metric: requests_per_month
-    limit: 1000
-    timeFrame: month
-    applies:
-      - Apinity.io API
-  - tier: professional
-    name: Professional Tier Default
-    scope: api-key
-    metric: requests_per_minute
-    limit: 100
-    burst: 200
-    timeFrame: minute
-    applies:
-      - Apinity.io API
-  - tier: professional
-    name: Professional Tier Monthly Quota
-    scope: api-key
-    metric: requests_per_month
-    limit: 100000
-    timeFrame: month
-    applies:
-      - Apinity.io API
-  - tier: enterprise
-    name: Enterprise Negotiated Limit
-    scope: contract
-    metric: requests_per_minute
-    limit: 1000
-    burst: 5000
-    timeFrame: minute
-    applies:
-      - Apinity.io API
-policies:
-  - name: Backoff Strategy
-    description: Clients should implement exponential backoff with jitter, honoring the Retry-After header
-      when present.
-  - name: Burst Handling
-    description: Short bursts above the steady-state limit are tolerated up to the documented burst ceiling
-      before throttling engages.
-  - name: Quota Reset
-    description: Monthly quotas reset at the start of each calendar month in UTC. Per-minute and per-second
-      windows reset on a sliding-window basis.
-  - name: Fair Use
-    description: Even on uncapped enterprise tiers, sustained usage that materially impacts shared infrastructure
-      may be subject to fair-use throttling.
+  throttled: null
+  note: the exhaustion status code is not documented
+plan_limit_model:
+  scope: per subscription plan, configured by the service provider
+  unit: Requests
+  period: provider-chosen interval
+  demo_plans: rate limit mandatory
+policies: []
 maintainers:
   - FN: Kin Lane
     email: info@apievangelist.com

@@ -1,0 +1,31 @@
+generated: '2026-09-18'
+method: searched
+source: https://docs.apinity.io/concepts/authorization
+docs:
+  - https://docs.apinity.io/step-by-step/subscribe-and-consume-a-service/consume-an-api-technical-implementation
+provider: Apinity.io
+providerId: apinity-io
+format: plain
+note: >-
+  apinity publishes no OpenAPI for its gateway and no error reference; these are the only gateway-level
+  failure responses the documentation states. The gateway answers them itself without forwarding the
+  request upstream. Errors from the proxied service are the upstream provider's own and are not catalogued here.
+problem_types:
+  - status: 401
+    title: Unauthorized
+    code: null
+    cause: the x-apx-authorization header (or the legacy Authorization carrier of the gateway token) is missing
+    remediation: POST {EndpointURI}/login with the Consumer Client credential and send the returned access_token in x-apx-authorization
+    source: https://docs.apinity.io/concepts/authorization#1.-consumer-client
+  - status: 403
+    title: Forbidden
+    code: null
+    cause: the x-apx-authorization header is present but the token is incorrect (expired, revoked client, ended subscription, or wrong subscription EndpointURI)
+    remediation: log in again to obtain a fresh token; for OAuth2 clients refresh with grant_type=refresh_token; create a new Consumer Client if the old one was revoked
+    source: https://docs.apinity.io/concepts/authorization#1.-consumer-client
+  - status: 404
+    title: Not Found
+    code: null
+    cause: the request URL omitted the https:// prefix (the docs' warning), or the EndpointURI does not match an active subscription
+    remediation: always include https:// and copy the Endpoint URL from Subscriptions > Technical Setup
+    source: https://docs.apinity.io/step-by-step/subscribe-and-consume-a-service/consume-an-api-technical-implementation

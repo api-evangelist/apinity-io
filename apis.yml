@@ -41,7 +41,7 @@ tags:
 url: >-
   https://raw.githubusercontent.com/api-evangelist/apinity-io/refs/heads/main/apis.yml
 created: '2025-01-08'
-modified: '2026-04-19'
+modified: '2026-09-18'
 specificationVersion: '0.23'
 apis:
   - aid: apinity-io:apinity-io
@@ -51,8 +51,12 @@ apis:
       marketplace programmatically, including API registration, discovery,
       subscription management, and governance policy enforcement across
       partner ecosystems.
-    humanURL: https://apinity.io/
-    baseURL: https://api.apinity.io
+    humanURL: https://docs.apinity.io/
+    baseURL: https://api.marketplace.apinity.io
+    x-baseurl-note: >-
+      Per-subscription gateway base https://api.marketplace.apinity.io/{EndpointURI} as stated in the
+      consumption docs (2026-09-18). The previous value api.apinity.io had no provider source and 404s;
+      the documented host currently presents a *.apinity.io certificate that does not cover it.
     tags:
       - API Governance
       - API Marketplace
@@ -60,7 +64,15 @@ apis:
       - Integration
     properties:
       - type: Documentation
-        url: https://apinity.io/
+        url: https://docs.apinity.io/
+      - type: GettingStarted
+        url: https://docs.apinity.io/quick-start/consume-a-service-quick
+      - type: Authentication
+        url: authentication/apinity-io-authentication.yml
+      - type: Conventions
+        url: conventions/apinity-io-conventions.yml
+      - type: ErrorCatalog
+        url: errors/apinity-io-problem-types.yml
       - type: JSONSchema
         url: json-schema/apinity-marketplace-schema.json
       - type: JSONLD
@@ -68,6 +80,30 @@ apis:
 common:
   - type: DomainSecurity
     url: security/apinity-io-domain-security.yml
+  - type: Documentation
+    url: https://docs.apinity.io/
+  - type: Support
+    url: https://docs.apinity.io/resources/get-help
+  - type: ChangeLog
+    url: https://docs.apinity.io/release-notes/about-the-release-notes
+  - type: ChangeLog
+    url: changelog/apinity-io-changelog.yml
+  - type: LLMsTxt
+    url: llms/apinity-io-llms.txt
+  - type: WellKnown
+    url: well-known/apinity-io-well-known.yml
+  - type: OpenIDConnect
+    url: well-known/apinity-io-openid-configuration.json
+  - type: Lifecycle
+    url: lifecycle/apinity-io-lifecycle.yml
+  - type: Conformance
+    url: conformance/apinity-io-conformance.yml
+  - type: Packages
+    url: packages/apinity-io-packages.yml
+  - type: Plans
+    url: plans/apinity-io-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/apinity-io-rate-limits.yml
   - type: GitHubOrganization
     url: https://github.com/apinity-io
   - type: LinkedIn
@@ -105,3 +141,8 @@ common:
 maintainers:
   - FN: Kin Lane
     email: info@apievangelist.com
+x-enrichment:
+  date: '2026-09-18'
+  status: enriched
+  artifacts_added: 10
+  pass: local-v3

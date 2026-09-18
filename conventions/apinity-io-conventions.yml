@@ -1,0 +1,73 @@
+generated: '2026-09-18'
+method: searched
+source: https://docs.apinity.io/step-by-step/subscribe-and-consume-a-service/consume-an-api-technical-implementation
+docs:
+  - https://docs.apinity.io/concepts/authorization
+  - https://docs.apinity.io/step-by-step/provide-a-service-on-the-marketplace/add-a-plan
+  - https://docs.apinity.io/step-by-step/provide-a-service-on-the-marketplace/add-an-api
+provider: Apinity.io
+providerId: apinity-io
+scope: >-
+  Cross-cutting semantics of the apinity marketplace GATEWAY, the only machine surface the provider
+  documents. apinity does not publish a management API for its own platform (services, plans,
+  subscriptions and consumer clients are created in the My Hub web UI); what a consumer calls is a
+  per-subscription proxy in front of a third-party service, plus the gateway's /login endpoint.
+  Operation-level conventions therefore belong to each upstream provider's own OpenAPI, which apinity
+  renders from the JSON OAS 2.0/3.0/3.1 file the provider uploads.
+auth:
+  style: gateway token in x-apx-authorization (Consumer Client API key -> static Basic token, or OAuth2 client_credentials -> Bearer JWT), optional provider credential passed through in Authorization
+  details: authentication/apinity-io-authentication.yml
+base_url:
+  pattern: https://api.marketplace.apinity.io/{EndpointURI}
+  note: EndpointURI is unique per subscription (Subscriptions > Technical Setup); the upstream server URL is hidden from the consumer-facing catalog since April 2024; only the FIRST servers[] entry of an uploaded OAS is honoured by the gateway
+  https_required: true — a URL without the https:// prefix returns 404
+idempotency:
+  coverage: none
+  header: null
+  note: >-
+    No Idempotency-Key or equivalent replay-protection mechanism is documented anywhere in the gateway
+    docs. The /login call is naturally repeatable (repeat API-key logins return the same token for the
+    year-long lifetime) but that is token caching, not a write-idempotency contract. Idempotency of
+    proxied operations is whatever the upstream provider implements.
+pagination:
+  style: not-applicable
+  note: the gateway defines no pagination; it proxies the upstream provider's responses unmodified
+versioning:
+  style: per-upstream
+  note: API versions live in the uploaded OAS paths (the docs' example is /v0/hello); since February 2024 a provider can update the specification of an API attached to live plans for minor version changes without rolling out a new plan
+errors:
+  envelope: none documented for the gateway; 401 (missing token) and 403 (invalid token) are returned by the gateway with no forwarded request, 404 when the https:// prefix is missing; upstream 4xx/5xx pass through
+  catalog: errors/apinity-io-problem-types.yml
+request_id:
+  header: null
+  note: no correlation/request-id header is documented
+tracing_headers_note: present on every gateway response; documented for performance testing and the only evidence that the gateway is Kong
+tracing_headers:
+  - name: X-Kong-Upstream-Latency
+    unit: ms
+    meaning: time the upstream service provider took to handle the call
+  - name: X-Kong-Proxy-Latency
+    unit: ms
+    meaning: time the marketplace engine / API gateway took to handle the call
+rate_limits:
+  signaling: not documented — limits are per-plan quotas ("100 Requests per month") that each service provider configures in Limits and Pricing; no X-RateLimit-* or Retry-After behaviour is published
+  details: rate-limits/apinity-io-rate-limits.yml
+metering:
+  transactions: >-
+    providers define billable "transactions" either as Single Request (a call to an endpoint answered
+    with configured HTTP status codes, e.g. 200-203) or as Response Header (any configured endpoint whose
+    response carries a named header value); prices are per period, per unit (request) with an optional
+    tiered threshold, or per transaction
+dry_run_mode:
+  state: na
+  note: no dry-run/test mode is documented for the gateway; providers may publish a free Demo plan (rate limit mandatory) that consumers subscribe to for integration testing, which is a commercial construct rather than a request-level dry run
+reversibility:
+  state: na
+  note: >-
+    The documented machine surface has no write operations of its own — /login mints a token, and every
+    other call is proxied to an upstream provider whose reversal semantics are that provider's. The
+    portal-side actions the docs describe as irreversible are UI actions, recorded here for agents
+    operating the portal on a human's behalf: revoking a Consumer Client "can't be undone" and unassigns
+    it from all subscriptions; a published plan's name cannot be changed; ending a subscription
+    invalidates the gateway token as soon as the subscription expires.
+  surfaces: []

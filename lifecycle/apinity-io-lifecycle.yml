@@ -1,0 +1,47 @@
+generated: '2026-09-18'
+method: searched
+source: https://docs.apinity.io/release-notes/about-the-release-notes
+docs:
+  - https://docs.apinity.io/release-notes/2024-may
+  - https://docs.apinity.io/step-by-step/subscribe-and-consume-a-service/consume-an-api-technical-implementation
+  - https://docs.apinity.io/resources/get-help
+provider: Apinity.io
+providerId: apinity-io
+versioning:
+  policy: none published for the gateway; versions belong to each uploaded upstream OAS
+  in_place_updates: since 2024-02 a provider can replace the specification of an API attached to subscribed plans for minor version changes
+deprecation:
+  policy: null
+  sunset_header: false
+  deprecation_header: false
+  note: no deprecation or sunset policy, and no RFC 8594 headers, are documented; APIs can be deleted from a provider's collection only while not assigned to a live plan
+status_page:
+  url: null
+  note: >-
+    apinity has no public status page. The May 2024 release added an in-portal API status feature
+    (Operational / Degraded / Major Outage / Maintenance) with automatic subscriber notification and a
+    per-API status history — visible only to logged-in tenant users, so it is not a public StatusPage pointer.
+sla:
+  published: false
+  note: no SLA is published; the docs point to sales@apinity.io for commercial terms
+support:
+  email: support@apinity.io
+  portal: http://support.apinity.io
+  portal_note: probed 2026-09-18 — TLS handshake fails (unrecognized name); the portal appears decommissioned. Ticket creation by email to support@apinity.io is the documented fallback.
+  docs: https://docs.apinity.io/resources/get-help
+tokens:
+  api_key_token_lifetime_seconds: 31536000
+  oauth2_access_token_lifetime_seconds: 300
+  oauth2_refresh_token_lifetime_seconds: 1800
+  note: values as stated in the consumption docs and the example /login responses; ending a subscription invalidates the token on subscription expiry
+changelog: changelog/apinity-io-changelog.yml
+deprecated_operations: []
+release_cadence:
+  observed: monthly release notes from 2023-10 to 2024-07, none since
+company:
+  note: >-
+    apinity GmbH (Meerbusch; former Allianz/Syncier Marketplace unit, acquired by Munich Re 2022-10-04)
+    is the general contractor for the BiPRO Hub run by BIPRO Service GmbH, whose selection notice included
+    an option to buy the entire software. apinity.io 301s to bipro-service.gmbh as of 2026-09-18.
+    Whether that is a rebrand, an exercised purchase option or a hosting change is not stated anywhere
+    public; it is an identity decision left for a human.

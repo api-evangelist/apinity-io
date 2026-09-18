@@ -1,0 +1,16 @@
+generated: '2026-09-18'
+method: searched
+source: https://github.com/apinity-io
+searched:
+  - {registry: npm, query: apinity, url: 'https://registry.npmjs.org/-/v1/search?text=apinity', result: 0 packages}
+  - {registry: pypi, package: apinity, url: https://pypi.org/pypi/apinity/json, status: 404}
+  - {registry: github, org: apinity-io, url: https://api.github.com/orgs/apinity-io/repos, result: 1 public repo (terraform-azure-container-apps, a Terraform module for Azure Container Apps, updated 2025-10-24) — infrastructure, not a client library}
+  - {registry: docs, url: https://docs.apinity.io/llms.txt, result: no SDK, CLI or client-library page in the manual; the docs recommend Postman or cURL}
+provider: Apinity.io
+providerId: apinity-io
+package_count: 0
+packages: []
+note: >-
+  apinity ships no first-party client library, CLI or SDK. Consumers integrate with cURL/Postman against
+  the per-subscription gateway URL. The one public repository in the GitHub organisation is an Azure
+  Terraform module. No SDKs pointer is emitted.
