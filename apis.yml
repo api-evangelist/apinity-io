@@ -81,6 +81,8 @@ apis:
       - type: JSONLD
         url: json-ld/apinity-context.jsonld
 common:
+  - type: FinOps
+    url: finops/apinity-io-finops.yml
   - type: DomainSecurity
     url: security/apinity-io-domain-security.yml
   - type: Documentation
