@@ -1,4 +1,4 @@
-# Apinity.io (apinity-io)
+# Apinity.io
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,86 +66,148 @@
 
 Apinity empowers organisations to run their compliant API marketplace that simplifies integration, drives adoption, and secures governance. The platform provides tools for managing API lifecycle, enabling API discovery, enforcing compliance policies, and facilitating secure API-driven integrations across partner ecosystems.
 
-**URL:** [https://apinity.io/](https://apinity.io/)
+**Areas:** API Governance · API Marketplace · Compliance · Discovery · Integration Platform
 
-## Tags:
+## Apinity.io on APIs.io
 
- - API Governance, API Marketplace, Compliance, Discovery, Integration Platform
+Everything profiled for Apinity.io is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/apinity-io/](https://apis.io/providers/apinity-io/)** — or go straight to one of the APIs or properties below.
 
-## Timestamps
+### APIs (1)
 
-- **Created:** 2025-01-08
-- **Modified:** 2026-04-19
+- [Apinity.io API](https://apis.io/apis/apinity-io/apinity-io/) — The Apinity API enables organizations to manage their compliant API marketplace programmatically, including API registration, discovery, subscription…
 
-## APIs
+### Published properties
 
-### Apinity.io API
-The Apinity API enables organizations to manage their compliant API marketplace programmatically, including API registration, discovery, subscription management, and governance policy enforcement across partner ecosystems.
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-**Human URL:** [https://apinity.io/](https://apinity.io/)
+#### MCP servers (1)
 
-#### Tags:
+Model Context Protocol servers that expose the API to agents.
 
- - API Governance, API Marketplace, Compliance, Integration
+- [Moved to /providers/apinity-io/](https://apis.io/servers/apinity-io/apinity-io/)
 
-#### Properties
+#### JSON Schema (1)
 
-- [Documentation](https://apinity.io/)
-- [JSONSchema](json-schema/apinity-marketplace-schema.json)
-- [JSON-LD](json-ld/apinity-context.jsonld)
+The data models the API reads and writes.
 
-## Common Properties
+- [Apinity Marketplace API](https://apis.io/schemas/apinity-io/apinity-marketplace/)
+
+#### JSON Structure (1)
+
+Data models expressed in JSON Structure.
+
+- [Apinity Marketplace Structure](https://apis.io/json-structure/apinity-io/apinity-marketplace-structure/)
+
+#### JSON-LD (1)
+
+Linked-data contexts for the provider's vocabulary.
+
+- [Apinity Context](https://apis.io/jsonld/apinity-io/apinity-context/)
+
+#### Vocabulary (1)
+
+The provider's domain terms, defined.
+
+- [Apinity Vocabulary](https://apis.io/vocabularies/apinity-io/apinity-vocabulary/)
+
+#### Examples (1)
+
+Example requests and responses.
+
+- [Apinity Marketplace Example](https://apis.io/examples/apinity-io/apinity-marketplace-example/)
+
+#### Governance rules (1)
+
+Spectral rulesets for the provider's contracts.
+
+- [Apinity.io — jsonschema rules](https://apis.io/rules/apinity-io/apinity-io-jsonschema-spectral-rules/)
+
+#### Security (2)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Apinity Io Authentication](https://apis.io/security/apinity-io/apinity-io-authentication/)
+- [Apinity Io Domain Security](https://apis.io/security/apinity-io/apinity-io-domain-security/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Apinity Io Plans Pricing](https://apis.io/plans/apinity-io/apinity-io-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Apinity Io Rate Limits](https://apis.io/rate-limits/apinity-io/apinity-io-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Apinity Io Finops](https://apis.io/finops/apinity-io/apinity-io-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
 - [Website](https://apinity.io/)
+- [Documentation](https://docs.apinity.io/)
+- [Support](https://docs.apinity.io/resources/get-help)
+- [Changelog](https://docs.apinity.io/release-notes/about-the-release-notes)
+- [GitHub](https://github.com/apinity-io)
 
-## Features
+## API Evangelist rating
 
-| Name | Description |
-|------|-------------|
-| Compliant API Marketplace | Run a branded API marketplace that meets regulatory and compliance requirements for API sharing. |
-| API Discovery | Enable partners and teams to discover available APIs through a governed marketplace catalog. |
-| API Governance | Enforce governance policies across the API lifecycle from design through deprecation. |
-| Integration Simplification | Simplify partner integrations through standardized API access, documentation, and subscription management. |
-| Adoption Tracking | Track API adoption metrics and usage across marketplace subscribers. |
+**Kin Score 25.6** — emerging · rubric 0.25.0 · scored 2026-10-23
 
-## Use Cases
+| Facet | Score |
+|---|---|
+| Discoverability | 75.0 |
+| Contract quality | 17.9 |
+| Contract governance | 28.0 |
+| Operational transparency | 18.4 |
+| Developer ergonomics | 38.1 |
+| Access clarity | 0.0 |
 
-| Name | Description |
-|------|-------------|
-| Partner API Ecosystem | Build and manage a governed API marketplace for sharing APIs with external partners and customers. |
-| Regulatory Compliance | Ensure API access and usage complies with regulatory requirements through policy enforcement. |
-| Internal API Catalog | Provide an internal marketplace for discovering and subscribing to internal APIs across teams. |
-| API Monetization | Monetize APIs through marketplace subscriptions and usage-based billing. |
+**Agent readiness 29.1** — agent-ready
 
-## Solutions
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | verified |
+| Auth Clarity | served (partial credit) |
+| Idempotency | — |
+| Error Semantics | documented (partial credit) |
+| OpenAPI Examples | — |
+| Rate Limit Signal | documented (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | served (partial credit) |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | yes |
+| Agentic Commerce | — |
+| Pagination Ratio | na |
+| Operation Distinctiveness | na |
 
-| Name | Description |
-|------|-------------|
-| API Marketplace | Full-featured compliant API marketplace for partner and customer-facing API distribution. |
-| Enterprise Governance | Enterprise-grade API governance and compliance tooling for regulated industries. |
+**Regulatory alignment 16.7** — Horizontal (data, software, accessibility, platform)
 
-## Artifacts
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/apinity-io/](https://apis.io/providers/apinity-io/).
 
-Machine-readable schemas organized by format.
+## How this profile is made
 
-### JSON Schema
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
 
-- [apinity-marketplace-schema.json](json-schema/apinity-marketplace-schema.json)
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Apinity.io: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
 
-### JSON Structure
+## Open an issue
 
-- [apinity-marketplace-structure.json](json-structure/apinity-marketplace-structure.json)
-
-### JSON-LD
-
-- [apinity-context.jsonld](json-ld/apinity-context.jsonld)
-
-## Vocabulary
-
-- [Apinity Vocabulary](vocabulary/apinity-vocabulary.yaml) — Unified taxonomy mapping API marketplace resources, governance policies, and personas across the Apinity compliant API marketplace platform
-
-## Maintainers
-
-**FN:** Kin Lane
-
-**Email:** info@apievangelist.com
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/apinity-io/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
